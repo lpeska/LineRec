@@ -14,7 +14,6 @@ from sklearn.decomposition import PCA
 
 #import helpers
 import inference
-import visualize
 
 contentMode = "cbvis"
 visLayer = "FC7"
@@ -213,9 +212,3 @@ else:
     (testInput, testIDs) = lnData.test(50)
     embed = siamese.o1.eval({siamese.x1: testInput}) 
     
-
-
-pca = PCA(n_components=2)
-pca.fit(embed)
-embed2D = pca.transform(embed)
-visualize.Visualize(embed2D, testIDs)
